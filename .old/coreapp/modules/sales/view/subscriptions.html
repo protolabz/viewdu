@@ -1,0 +1,23 @@
+<div class="container" id="subscriptions">
+    <section class="subscriptions-info">
+        <div class="row">
+            <div class="col-xs-24 col-sm-12 text-center">
+               <h1>Subscriptions</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-24 col-sm-12 divcenters">
+                <div class="box" ng-repeat="sub in ctrl.subscriptions">
+                    <h3>{{sub.name}}</h3>
+                    <p>{{sub.description}}</p>
+                    <h5>Cost:</h5>
+                    <p>${{sub.costing.price}} {{sub.costing.currency}}</p>
+                    <p><span ng-show="sub.costing.recurring">per </span>{{sub.costing.frequency}} {{sub.costing.frequencyUnits}}</p>
+                    <br>
+                    <button ng-show="ctrl.SessionService.LoggedIn" class="btn btn-default" ng-click="ctrl.addSubscription(sub)"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart</button>
+                    <button ng-show="!ctrl.SessionService.LoggedIn" class="btn btn-default" ng-click="ctrl.sendTologin()"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Login / Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

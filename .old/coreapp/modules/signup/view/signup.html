@@ -1,0 +1,75 @@
+    <div class="container">
+
+      <div class="starter-template">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h1>Welcome to the family of Awesomeness</h1>
+                <h3>Signing up could be easier, please provide your email and password or utilise our social feature which will automatically create you an account.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+            <form role="form" name="ctrl.signupForm" ng-submit="ctrl.signupForm.$valid && ctrl.signup()" novalidate >
+                <div class="form-group text-right">
+                    <!--<label for="email" >Email</label>
+                    <br/>-->
+                    <input  type="email" name="email" ng-model="ctrl.email" class="form-control" placeholder="Email"  required user-exists/> 
+                    <span style="color:red" ng-show="ctrl.signupForm.email.$dirty && ctrl.signupForm.email.$invalid">
+                        <span ng-show="ctrl.signupForm.email.$error.required">Email is required.<br/></span>
+                        <span ng-show="ctrl.signupForm.email.$error.email">Invalid email address.<br/></span>
+                        <span ng-show="ctrl.signupForm.email.$error.userExists">Email already exists<br/></span>
+                    </span>
+                    <span style="color:green" ng-show="ctrl.signupForm.email.$dirty && ctrl.signupForm.email.$invalid">
+                            <span ng-show="ctrl.signupForm.email.$error.userExists_Checking">Validating user...<br/></span>
+                    </span>
+                    <br/>
+                    <!--<label for="password">Password</label>
+                    <br/>-->
+                    <input type="password" name="password"  ng-model="ctrl.password"  class="form-control" placeholder="Password"  required/>
+                    <span style="color:red" ng-show="ctrl.signupForm.password.$dirty && ctrl.signupForm.password.$invalid">
+                        <span ng-show="ctrl.signupForm.password.$error.required">Password is required</span>
+                    </span>
+                    <br/>
+                    <script
+                    src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+                    async defer
+                    ></script>
+                    <div
+                        vc-recaptcha
+                        key="'6LfiIQkUAAAAAH9OEb156PBJ86KUn3N4aMWKlErX'"
+                        ng-model="ctrl.captcha.model"
+                        on-create="ctrl.setWidgetId(widgetId)"
+                        on-success="ctrl.setResponse(response)"
+                        on-expire="ctrl.cbExpiration()"
+                    ></div>
+                    <br/>
+                    <button type="submit" ng-click="ctrl.user.captcha = Recaptcha.get_challenge()" ng-disabled="ctrl.signupForm.$invalid || ctrl.isProcessing" class="btn btn-default">Signup</button>
+                </div>
+            </form>
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+         <div class="row">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+                <h3>Social media linked accounts</h3>
+                <br />
+                <a class="btn btn-block btn-social btn-facebook" 
+                    href="/auth/facebook"
+                >
+                    <span class="fa fa-facebook"></span>
+                    Sign-up with Facebook
+                </a>
+                <a class="btn btn-block btn-social btn-google" href="/auth/google">
+                    <span class="fa fa-google"></span>
+                    Sign-up with Google
+                </a>
+                <br />
+                <br /><br />
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->

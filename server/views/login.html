@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" ng-app="r8">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Ausenco Rylson Core">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="icon" type="image/png" href="images/icon.png">
+
+<title>Seed testing</title>
+
+<script>
+var r8Err = false;
+window.onerror = function(msg, url, lineNo, colNo, err) {
+  if (msg.toLowerCase().indexOf('script error') < 0) {
+    if(!r8Err) {
+      r8Err = true;
+      alert(msg + '\n\nNote: this is a catch-all error.\nPlease contact our helpdesk if you see this message.', url, lineNo, colNo, err);
+    }
+  }
+};
+</script>
+
+
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/default.css">
+
+
+
+</head>
+<body>
+<noscript>
+<br /><br />
+<p>javascript is required</p> 
+<br /><br />
+</noscript>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">Fake Company</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <!--<ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>-->
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <div class="row">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+            <form>
+                <div class="form-group text-right">
+                    <h3 class="text-left">Log in</h3>
+                    <!--<label for="email" >Email</label>
+                    <br/>-->
+                    <input type="text" ng-model="ctrl.email" class="form-control" placeholder="Email"/>
+                    <br/>
+                    <!--<label for="password">Password</label>
+                    <br/>-->
+                    <input type="password" ng-model="ctrl.password"  class="form-control" placeholder="Password"/>
+                    <br/>
+                    <button ng-click="ctrl.login()" class="btn btn-default">Log In</button>
+                    <button ng-click="ctrl.createNewAccount()" class="btn btn-default">Sign Up</button>
+                    <br />
+                    <button class="btn btn-link" ng-click="ctrl.forgotPassword()">Forgotten Password?</button>
+                </div>
+            </form>
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+                <br />
+                <a class="btn btn-block btn-social btn-facebook" 
+                    href="/auth/facebook"
+                >
+                    <span class="fa fa-facebook"></span>
+                    Sign in with Facebook
+                </a>
+                <a class="btn btn-block btn-social btn-google" href="/auth/google">
+                    <span class="fa fa-google"></span>
+                    Sign in with Google
+                </a>
+                <br />
+                <br /><br />
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

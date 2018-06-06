@@ -1,0 +1,81 @@
+    <div class="container">
+
+      <div class="starter-template">
+          <div class="row" ng-show="ctrl.failed" id="FailedLogin">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+                <p>Login Failed: Username or Password Incorrect</p>
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+        <div class="row" ng-show="ctrl.successfulEmailValidation" id="emailverification">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+                <p>Successful Email Verification ... Please Login to continue</p>
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+        <div class="row" ng-show="ctrl.confirmResetPassword" id="passwordReset">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+                <p>If an email matches entered one a new password will be emailed or texted to you soon.</p>
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+            <img alt="Wetware" src="images/product.png" class="productlogo" />
+            <form role="form" name="ctrl.loginForm" novalidate >
+                <div class="form-group text-right">
+                    <h3 class="text-left">Log in</h3>
+                    <!--<label for="email" >Email</label>
+                    <br/>-->
+                    <input  type="email" name="email" ng-model="ctrl.email" class="form-control" placeholder="Email"  required check-account/> 
+                    <span style="color:red" ng-show="ctrl.loginForm.email.$dirty && ctrl.loginForm.email.$invalid">
+                        <span ng-show="ctrl.loginForm.email.$error.required">Email is required.<br/></span>
+                        <span ng-show="ctrl.loginForm.email.$error.email">Invalid email address.<br/></span>
+                        <span ng-show="ctrl.loginForm.email.$error.userDoesNotExist">No Account Exists for this Email<br/></span>
+                    </span>
+                    <span style="color:green" ng-show="ctrl.loginForm.email.$dirty && ctrl.loginForm.email.$invalid">
+                            <span ng-show="ctrl.loginForm.email.$error.userDoesNotExist_Checking">Checking we have a account...<br/></span>
+                    </span>
+                    <br/>
+                    <!--<label for="password">Password</label>
+                    <br/>-->
+                    <input type="password" name="password"  ng-model="ctrl.password"  class="form-control" placeholder="Password"  required/>
+                    <span style="color:red" ng-show="ctrl.loginForm.password.$dirty && ctrl.loginForm.password.$invalid">
+                        <span ng-show="ctrl.loginForm.password.$error.required">Password is required</span>
+                    </span>
+                    <br/>
+                    <button ng-click="ctrl.loginUser()" class="btn btn-default" ng-disabled="ctrl.signupForm.$invalid">Log In</button>
+                    <button ng-click="ctrl.signup()" class="btn btn-default">Sign Up</button>
+                    <br />
+                    <button class="btn btn-link" ng-click="ctrl.forgotPassword()">Forgotten Password?</button>
+                </div>
+            </form>
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
+                <br />
+                <a class="btn btn-block btn-social btn-facebook" 
+                    href="/auth/facebook"
+                >
+                    <span class="fa fa-facebook"></span>
+                    Sign in with Facebook
+                </a>
+                <a class="btn btn-block btn-social btn-google" href="/auth/google">
+                    <span class="fa fa-google"></span>
+                    Sign in with Google
+                </a>
+                <br />
+                <br /><br />
+            </div>
+            <div class="col-xs-2 col-md-2"></div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->

@@ -1,0 +1,120 @@
+<div class="container" id="user">
+    <section class="user-info">
+        <div class="row">
+            <div class="col-xs-24 col-sm-12 text-center">
+               <h1>Welcome to {{'page.title' | translate}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-24 col-sm-12 text-center">
+               <p>We see this is your first time into our awesome program. Please fill in some of your details into our system so we can provide a better user experience for you.</p>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-xs-12 col-sm-4 text-center">
+                        <img class="img-circle" 
+                            alt="140x140" 
+                            style="width: 140px; height: 140px;" 
+                            data-ng-src="{{user.profileImage}}" 
+                            data-holder-rendered="true"
+                            ng-click="user.openImageDialog()"><br>
+                            <a role="link" ng-click="user.openImageDialog()">Click to upload / change image</a>
+                </div>
+            <form role="form" name="user.userForm" ng-submit="user.userForm.$valid && user.save()" novalidate >
+                <div class="col-xs-12 col-sm-8 text-center">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 text-right">
+                            Name
+                        </div>
+                        <div class="col-xs-6 col-sm-8 text-left">
+                            <input  type="name" name="name" ng-model="user.user.name" class="form-control" placeholder="Full name" required/> 
+                            <span style="color:red" ng-show="user.userForm.name.$dirty && user.userForm.name.$invalid">
+                                <span ng-show="user.userForm.name.$error.required">name is required.<br/></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 text-right">
+                            Gender
+                        </div>
+                        <div class="col-xs-6 col-sm-8 text-left">
+                           <select ng-model="user.user.gender" ng-options="x for x in user.genders">
+                            </select>
+                            <span style="color:red" ng-show="user.userForm.$dirty && user.userForm.gender.$invalid">
+                                <span ng-show="user.userForm.gender.$error.required">gender is required.<br/></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 text-right">
+                            Birthday
+                        </div>
+                        <div class="col-xs-6 col-sm-8 text-left">
+                            <p class="input-group">
+                                <input type="text" name="birthday" class="form-control" uib-datepicker-popup="dd.MM.yyyy" 
+                                        ng-model="user.user.birthday" is-open="user.birthdayselector.opened" 
+                                        datepicker-options="user.birthdayoptions" ng-required="true" 
+                                        close-text="Close" alt-input-formats="user.altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="user.openBirthdaySelector()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                            <span style="color:red" ng-show="user.userForm.birthday.$dirty && user.userForm.birthday.$invalid">
+                                <span ng-show="user.userForm.birthday.$error.required">birthday is required.<br/></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 text-right">
+                            Email
+                        </div>
+                        <div class="col-xs-6 col-sm-8 text-left">
+                            <input  type="email" name="email" ng-model="user.user.email" class="form-control" placeholder="Email"  required/> 
+                            <span style="color:red" ng-show="user.userForm.email.$dirty && user.userForm.email.$invalid">
+                                <span ng-show="user.userForm.email.$error.required">Email is required.<br/></span>
+                                <span ng-show="user.userForm.email.$error.email">Invalid email address.<br/></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 text-right">
+                            Job
+                        </div>
+                        <div class="col-xs-6 col-sm-8 text-left">
+                            <input  type="job" name="job" ng-model="user.user.job" class="form-control" placeholder="Job Title"/> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 text-right">
+                            Mobile
+                        </div>
+                        <div class="col-xs-6 col-sm-8 text-left">
+                            <input  type="mobile" name="mobile" ng-model="user.user.mobile" class="form-control" placeholder="Mobile" required/> 
+                            <span style="color:red" ng-show="user.userForm.mobile.$dirty && user.userForm.mobile.$invalid">
+                                <span ng-show="user.userForm.mobile.$error.required">Mobile is required.<br/></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 text-right">
+                            Address
+                        </div>
+                        <div class="col-xs-6 col-sm-8 text-left">
+                                <input  type="address" name="address" ng-model="user.user.address" placeholder="Address" class="form-control"/>
+                                <input  type="city" name="city" ng-model="user.user.city" class="form-control" placeholder="City"/>
+                                <input  type="addressstate" name="addressstate" ng-model="user.user.addressstate" class="form-control" placeholder="State"/>
+                                <input  type="country" name="country" ng-model="user.user.country" class="form-control" placeholder="Country"/>
+                                <input  type="postcode" name="postcode" ng-model="user.user.postcode" class="form-control" placeholder="Postcode / Zip Code"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 text-center">
+                            <a class="btn btn-lg btn-primary" href="\app" role="button">Fill out Later</a>
+                            <button class="btn btn-lg btn-primary" type="submit" ng-disabled="user.userForm.$invalid || user.isProcessing">Save and Go to App</button>
+                        </div>
+                    </div>
+                </div>
+           </form>
+        </div>
+    </section>
+</div>

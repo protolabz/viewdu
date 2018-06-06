@@ -1,0 +1,46 @@
+.divcenters {
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.box {
+  width: 200px;
+  height: 400px;
+  border: 6px solid #338CC3;
+  margin: 1px;
+  text-align: center;
+  float:left;
+  padding: 5px;
+}
+
+.box:hover{
+  width: 250px;
+  
+  /* Add extra 52px to normal height. Then, 1/2 of that is for top and the other half is for bottom. */
+  height: 452px;
+  
+  /* Below we are using -26px ( 1/2 of total "extra' used for height). */
+  margin-top: -26px;
+  
+  /* Make the border color lighter/brighter than non-hover color */
+  border: 6px solid #52B5D5;
+ 
+  /* Add drop shadow effect */
+  /*   http://www.webestools.com/css3-box-shadow-generator-css-property-easy-shadows-div-html5-drop-shadow-moz-webkit-shadow-maker.html   */
+  -moz-box-shadow:0px 0px 50px 0px #000000;
+  -webkit-box-shadow:0px 0px 50px 0px #000000;
+  box-shadow:0px 0px 50px 0px #000000;
+  
+  /* Add curved corners via CSS3 Border radius to popped item that mimic original website effect */
+  /*   http://border-radius.com/    */
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+  /* Give it a higher z-index to it's on top of adjacent items near it. */
+  z-index: 10;
+}

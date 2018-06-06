@@ -1,0 +1,30 @@
+<div class="container" id="userimage">
+    <section class="user-image" ng-show="!ctrl.uploading">
+        <div class="row">
+                <div class="col-xs-6 col-sm-6 text-center">
+                    <h3>Upload Profile Picture</h3>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-0 col-sm-2 text-right">
+                Select picture
+            </div>
+            <div class="col-xs-0 col-sm-4 text-left">
+                <input type="file" id="file" name="file" accept="image/*"/>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-xs-6 col-sm-6 text-center">
+                    <button class="btn btn-lg btn-primary" ng-click="ctrl.save()">Save</button>
+                    <button class="btn btn-lg btn-primary" ng-click="ctrl.cancel()">Cancel</button>
+                </div>
+            </div>
+    </section>
+    <section class="user-image" ng-show="ctrl.uploading">
+        <div class="row">
+                <div class="col-xs-6 col-sm-6 text-center">
+                    <h4>Please wait as we upload your image to the server ... <i class="fa fa-spinner" aria-hidden="true"></i></h4>
+                </div>
+        </div>
+    </section>
+</div>
